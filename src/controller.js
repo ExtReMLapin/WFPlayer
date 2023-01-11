@@ -103,6 +103,7 @@ export default class Controller {
             wasPlaying = this.wf.options.mediaElement.paused === false
             this.wf.options.mediaElement.pause()
             this.wf.grabbing = true;
+            this.wf._currentTime = this.wf.currentTime;
             lastCurrentTime = scrollable ? this.wf.currentTime : this.wf.getCurrentTimeFromEvent(event);
             lastPageX = event.pageX;
             this.wf.emit('startGrabbing', lastCurrentTime, event);
